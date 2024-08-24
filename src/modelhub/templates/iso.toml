@@ -1,0 +1,47 @@
+[iso]
+name = ""
+id = ""
+description = ""
+introduction = ""
+focus = ""
+commands = []
+prompt_template = """
+<|im_start|>System:
+$system_message<|im_end|>
+<|im_start|>User: 
+Our current focus is: $asst_focus<|im_end|>
+<|mem_start|>My Memories Similar to this request:
+$memories<|mem_end|>
+<|chat_start|>Chat History:
+$context
+<|im_start|>$username:
+$user_input<|im_end|>
+<|im_start|>$agent_name:
+"""
+start_token = "<|im_start|>"
+end_token = "<|im_end|>"
+mem_start_token = "<|mem_start|>"
+mem_end_token = "<|mem_end|>"
+hist_start_token = "<|hist_start|>"
+hist_end_token = "<|hist_end|>"
+completions_url = "http://127.0.0.1:11434/api/generate"
+
+[iso.modelfile]
+from_model = "dolphin-mistral"
+num_ctx = 4096
+seed = 113442
+system_message = "You are a helpful assistant"
+
+[iso.modelfile.parameters]
+temperature = 0.70
+num_predict = 512
+top_k = 42
+top_p = 0.42
+mirostat = 0
+mirostat_eta = 0.1
+mirostat_tau = 5.0
+repeat_last_n = 64
+tfs_z = 1
+
+[iso.notes_to_self]
+notes = []

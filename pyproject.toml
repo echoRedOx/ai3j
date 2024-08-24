@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai3j"
+version = "0.0.2"
+dependencies = [
+    "ollama",
+    'importlib-metadata; python_version>="3.11"',
+    "chromadb",
+    "nltk"
+]
+
+[tool.setuptools.packages]
+find = {}  # Scan the project directory with the default parameters

@@ -1,0 +1,8 @@
+from $from_model
+
+parameter num_ctx $num_ctx
+parameter seed 113442
+parameter temperature $temperature
+parameter num_predict $num_predict
+
+system """$system_message"""
