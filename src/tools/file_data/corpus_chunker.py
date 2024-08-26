@@ -5,6 +5,7 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 
 nltk.download('punkt')
 
+
 def chunk_text(file_path: str, max_chunk_size: int, overlap_size: int, output_path: str) -> None:
     """
     Chunk text into smaller pieces based on max_chunk_size and overlap_size and save to JSON file.
@@ -51,11 +52,9 @@ if __name__ == "__main__":
         print("Usage: python chunk_text.py <input_file> <output_file> <max_chunk_size> <overlap_size>")
         sys.exit(1)
 
-    # Parse command-line arguments
     input_file = sys.argv[1]
     output_file = sys.argv[2]
     max_chunk_size = int(sys.argv[3])
     overlap_size = int(sys.argv[4])
 
-    # Call the chunking function with the provided arguments
     chunk_text(input_file, max_chunk_size, overlap_size, output_file)
