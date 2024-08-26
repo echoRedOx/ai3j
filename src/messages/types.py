@@ -32,7 +32,8 @@ class Message:
         :param message: The Message object to convert.
         :return: A string that can be sent to the model.
         """
-        return f"<|im_start|>{self.speaker}: \n{self.content}<|im_end|>"
+        
+        return f"<|im_start|>{self.speaker} (Timestamp: {self.timestamp}): \n{self.content}<|im_end|>"
     
     def to_memory_string(self):
         """

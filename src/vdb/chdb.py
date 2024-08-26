@@ -91,6 +91,7 @@ def chroma_upsert_agent_command(command_name: str, command: str) -> None:
 
 
 def chroma_results_format_to_prompt(chroma_results):
+    """My way of normalizing RAG results by enforcing formatting rules for consistency."""
     if not chroma_results["documents"] or all(not doc for doc in chroma_results["documents"]):
         return "No results found."
     formatted_output = ""

@@ -28,8 +28,7 @@ completions_url = "http://127.0.0.1:11434/api/generate"
 
 [iso.modelfile]
 from_model = "dolphin-mistral"
-num_ctx = 4096
-seed = 113442
+num_ctx = 8192
 system_message = "You are a helpful assistant"
 
 [iso.modelfile.parameters]

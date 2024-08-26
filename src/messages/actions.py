@@ -10,7 +10,7 @@ def start_new_conversation(host: str, host_is_bot: bool, guest: str, guest_is_bo
 
     :param host: The name of the host
     :param host_is_bot: Whether the host is a bot
-    :param guest: The name of the guest agent
+    :param guest: The name of the guest iso
     :param guest_is_bot: Whether the guest is a bot
 
     :return: Conversation object
@@ -32,7 +32,6 @@ def start_new_conversation(host: str, host_is_bot: bool, guest: str, guest_is_bo
 
 
 def append_turn_to_conversation_yaml(conversations_file_path: str, conversation_uuid: str, turn: Turn) -> None:
-    # TODO: testing
     """
     Appends a turn to the specified conversation in the YAML file.
 

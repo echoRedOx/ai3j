@@ -11,7 +11,6 @@ class Iso:
     
     from_model: str
     num_ctx: int
-    seed: int
     num_predict: int
     temperature: float
     system_message: str
@@ -32,7 +31,6 @@ class Iso:
         self.name = self.instructions['iso']['name']
         self.from_model = self.instructions['iso']['modelfile']['from_model']
         self.num_ctx = self.instructions['iso']['modelfile']['num_ctx']
-        self.seed = self.instructions['iso']['modelfile']['seed']
         self.num_predict = self.instructions['iso']['modelfile']['num_predict']
         self.temperature = self.instructions['iso']['modelfile']['temperature']
         self.system_message = self.instructions['iso']['modelfile']['system_message']
