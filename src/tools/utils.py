@@ -1,5 +1,38 @@
 from nltk.tokenize import sent_tokenize, word_tokenize
 from typing import List
+import sys
+import time
+
+
+def debug_print_function_return(function_name: str, return_value):
+    """
+    Debug print function return value
+
+    :param function_name: The name of the function.
+    :param return_value: The return value of the function.
+    :returns: Prints the return value of a function to the terminal.
+    """
+    print(f"=====  DEBUG: {function_name}  =====")
+    print(f"Return value:\n{return_value}\n")
+    print(f"=====  END DEBUG: {function_name}  =====")
+
+
+def stream_agent_response(agent_name, text: str, delay: int) -> None:
+    """
+    Print string one character at a time.
+
+    param text: The string to print
+    param delay: The delay between printing each character
+    returns: Prints streaming text to terminal with Agent_Name prepended for terminal chat formatting.
+    """
+    sys.stdout.write(f"\n{agent_name}>> ")
+    sys.stdout.flush()  # Flush to ensure bot_name is printed immediately
+
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()  # Ensure char is displayed immediately
+        time.sleep(delay)   # Wait a bit before printing the next one
+    print()  # Move to the next line
 
 
 def chunker(text, max_words_per_chunk=100, language="english"):
